@@ -1,0 +1,62 @@
+<div class="main-container">
+    <h1 class="container-heading">Madhav's TODO App</h1>
+    <!-- Create Task Form -->
+    <form id="createTask" class="create-task-form" action="/create-task" method="POST">
+        <div class="create-task-section top desc">
+            <label for="desc" class="desc-title">Description</label>
+            <input id="ntDesc" class="new-task-desc" name="desc" placeholder="What do you need to do?" required />
+        </div>
+        <div class="create-task-section bottom cat">
+            <label for="category" class="cat-title">Category</label>
+            <select id="ntCat" class="new-task-cat" name="category">
+                <option value="" selected>Choose a Category</option>
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="create-task-section bottom date">
+            <label for="due_date" class="date-title">Due Date</label>
+            <input type="date" id="ntDate" class="new-task-date" name="due_date" />
+        </div>
+    </form>
+    <!-- Submit buttons section is maintained outside the form to replicate the design -->
+    <div class="submit-section">
+        <button type="submit" form="createTask" class="create" id="createTaskSubmit" disabled>
+            <i class="fa-sharp fa-solid fa-plus"></i>
+            Add Task
+        </button>
+        <button type="submit" form="deleteTask" class="delete" id="deleteTaskSubmit" disabled>
+            <i class="fa-solid fa-trash-can"></i>
+            Delete Task
+        </button>
+    </div>
+    <div class="all-posts">
+        <% if (tasks && tasks.length) { %>
+        <!-- Create Task Form -->
+        <form id="deleteTask" class="delete-task-form" action="/delete-task" method="POST">
+            <!-- Get each task object from the tasks array -->
+            <% tasks.forEach(function(task){ %>
+                <div class="task-section">
+                    <input type="checkbox" name="tasks[]" value="<%= task.id %>" />
+                    <div class="task-mid-section">
+                        <div class="task-desc"><%= task.desc %></div>
+                        <div class="task-due_date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <%= task.formatedDueDate %>
+                        </div>
+                    </div>
+                    <% if(task.category != "") { %>
+                        <div class="task-category <%= task.category %>"><%= task.category %></div>
+                    <% } %>
+                </div>
+            <% }); %>
+        </form>
+        <% } else { %>
+        <div class="no-tasks">No Tasks Exist</div>
+        <% } %>
+    </div>
+</div>
+<script src="/js/home.js"></script>

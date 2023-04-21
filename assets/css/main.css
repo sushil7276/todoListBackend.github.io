@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #7f7f7f;
+  display: flex;
+  justify-content: center;
+}
+body .main-container {
+  background-color: white;
+  color: #555555;
+  display: flex;
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  flex-direction: column;
+  margin: 100px 0;
+}
+body .main-container .container-heading {
+  align-self: center;
+}
+body .main-container .create-task-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+body .main-container .create-task-form .create-task-section {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #666666;
+  padding: 10px 0;
+}
+body .main-container .create-task-form .create-task-section.top {
+  width: 100%;
+}
+body .main-container .create-task-form .create-task-section.bottom {
+  width: 50%;
+}
+body .main-container .create-task-form .create-task-section input {
+  border: 0px;
+  outline: none;
+  padding: 5px 15px 10px;
+}
+body .main-container .create-task-form .create-task-section select {
+  border: 0px;
+  outline: none;
+  padding: 5px 10px 10px;
+}
+body .main-container .create-task-form .create-task-section label {
+  padding: 5px 15px 10px;
+}
+body .main-container .submit-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+body .main-container .submit-section button {
+  color: white;
+  outline: none;
+  border-width: 0px;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px;
+}
+body .main-container .submit-section button.create {
+  background-color: green;
+}
+body .main-container .submit-section button.delete {
+  background-color: red;
+}
+body .main-container .submit-section button.create[disabled], body .main-container .submit-section button.delete[disabled] {
+  background-color: #666666;
+}
+body .main-container .all-posts .no-tasks {
+  padding: 15px;
+  text-align: center;
+}
+body .main-container .all-posts .delete-task-form {
+  display: flex;
+  flex-direction: column;
+}
+body .main-container .all-posts .delete-task-form .task-section {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-mid-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-mid-section .task-desc {
+  font-size: 15px;
+  font-weight: bold;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-mid-section .task-due_date {
+  font-size: 12px;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-category {
+  padding: 10px;
+  border-width: 0px;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-category.personal {
+  background-color: #3131d7;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-category.work {
+  background-color: #9b00ad;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-category.school {
+  background-color: #f2a500;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-category.cleaning {
+  background-color: #866121;
+}
+body .main-container .all-posts .delete-task-form .task-section .task-category.other {
+  background-color: #6b6b6b;
+}
+
+/*# sourceMappingURL=main.css.map */
